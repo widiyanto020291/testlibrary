@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tool_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginBottom="5dp"
+        android:focusable="false"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="12.5dp"
+        android:layout_marginStart="12.5dp"
+        android:background="@drawable/bg_place_holder_rec_3"/>
+    <RelativeLayout
+        android:layout_marginStart="5dp"
+        android:visibility="gone"
+        android:id="@+id/rl_place_holder_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/v_1"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bg_place_holder_rec_2"/>
+    </RelativeLayout>
+</LinearLayout>

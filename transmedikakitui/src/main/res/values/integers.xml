@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="length64">64</integer>
+    <integer name="length1000">1000</integer>
+    <integer name="length100">100</integer>
+    <integer name="length200">200</integer>
+    <integer name="length300">300</integer>
+    <integer name="durasi_shimmer">800</integer>
+</resources>

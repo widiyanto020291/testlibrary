@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_tambah_gambar"
+    android:layout_width="85dp"
+    android:layout_height="85dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:cardBackgroundColor="@color/line_light"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="5dp">
+            <ImageView
+                android:contentDescription="@string/content_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                app:srcCompat="@drawable/ic_tambah_gambar"/>
+            <ImageView
+                android:id="@+id/img"
+                android:contentDescription="@string/content_desc"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_close"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/btn_radio_on_1_1"
+        android:contentDescription="@string/content_desc"/>
+</RelativeLayout>

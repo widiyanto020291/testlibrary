@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:id="@+id/view_loading"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/item_cari_obat_place_holder"/>
+    <include layout="@layout/common_line_horiz"/>
+    <include layout="@layout/item_cari_obat_place_holder"/>
+    <include layout="@layout/common_line_horiz"/>
+    <include layout="@layout/item_cari_obat_place_holder"/>
+    <View
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:background="@drawable/bg_place_holder_rec_2"
+        android:layout_gravity="center_horizontal"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:background="@color/line_light"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="20dp"/>
+        <View
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:background="@color/line_light"/>
+    </LinearLayout>
+    <View
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/line_light"/>
+    <View
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_place_holder_rec_2"/>
+</LinearLayout>
