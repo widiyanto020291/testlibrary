@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <com.transmedika.transmedikakitui.widget.NetkromTextView
+        android:id="@+id/tv_name"
+        android:textSize="@dimen/x_small_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="0dp"
+        android:paddingEnd="15dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toStartOf="@+id/tv_total"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.725"
+        tools:text="Redoxon 1 Dus" />
+
+    <com.transmedika.transmedikakitui.widget.NetkromTextView
+        android:id="@+id/tv_stok"
+        android:textSize="@dimen/x_small_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/red_dark"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:text="Stok 20"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/ll_plus_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_stok">
+
+        <ImageButton
+            android:id="@+id/imgb_min"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/btn_plus"
+            android:contentDescription="@string/content_desc"
+            android:padding="2.5dp"
+            android:src="@drawable/ic_minus" />
+
+        <com.transmedika.transmedikakitui.widget.NetkromTextView
+            android:id="@+id/tv_jumlah"
+            android:textSize="@dimen/x_small_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_text_add_min"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@android:color/black"
+            tools:text="5" />
+
+        <ImageButton
+            android:id="@+id/imgb_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/btn_minus"
+            android:contentDescription="@string/content_desc"
+            android:padding="2.5dp"
+            app:srcCompat="@drawable/ic_plus" />
+    </LinearLayout>
+
+    <com.transmedika.transmedikakitui.widget.NetkromTextView
+        android:id="@+id/tv_total"
+        android:textSize="@dimen/x_small_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:gravity="end"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_name"
+        tools:text="Rp999.999.999" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/ll_plus_min">
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:contentDescription="@string/content_desc"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_close_obat"
+            tools:visibility="visible" />
+
+        <com.transmedika.transmedikakitui.widget.NetkromTextView
+            android:id="@+id/tv_tidak_tersedia"
+            android:textSize="@dimen/x_small_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rec_disable2"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/tidak_tersedia"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/selectableItemBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    android:layout_gravity="center"
+    android:paddingTop="15dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
+    <com.transmedika.transmedikakitui.widget.CircleImageView
+        android:id="@+id/img"
+        android:contentDescription="@string/content_desc"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:paddingBottom="10dp"/>
+    <com.transmedika.transmedikakitui.widget.NetkromTextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:text="Dokter Gigi"
+        android:maxLines="3"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/x_small_text"
+        android:gravity="bottom|center"/>
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
+    <com.transmedika.transmedikakitui.widget.NetkromTextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textDefault"
+        android:textSize="@dimen/small_text"
+        android:layout_centerVertical="true"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:gravity="start"
+        tools:text="Blabla"/>
+    <com.transmedika.transmedikakitui.widget.NetkromCheckBox
+        android:id="@+id/cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:checked="true"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="-5dp"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>

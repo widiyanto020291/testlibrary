@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingEnd="16dp"
+    android:paddingStart="0dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        app:cardBackgroundColor="@color/bubble_me_color"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:cardPreventCornerOverlap="false">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/group_chat_message_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_reply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="0dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="3dp"
+                    android:paddingBottom="3dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/transparent_gray"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/group_chat_reply_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <View
+                            android:layout_width="3.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="7.5dp"
+                            android:background="@color/colorAccent" />
+
+                        <com.transmedika.transmedikakitui.widget.CircleImageView
+                            android:id="@+id/img_reply_profile"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/bg_circle_place_holder"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.transmedika.transmedikakitui.widget.NetkromTextView
+                                android:id="@+id/tv_reply_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginTop="5dp"
+                                android:minHeight="0dp"
+                                android:textColor="@color/colorAccent"
+                                tools:text="Widiyanto" />
+
+                            <com.transmedika.transmedikakitui.widget.NetkromTextView
+                                android:id="@+id/tv_reply_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxWidth="288dp"
+                                android:paddingStart="0dp"
+                                android:paddingEnd="5dp"
+                                android:paddingBottom="5dp"
+                                android:textColor="@android:color/darker_gray"
+                                android:textSize="14sp"
+                                tools:text="Mainan ini sudah bisa kalian dapatkan" />
+                        </LinearLayout>
+                        <ImageView
+                            android:id="@+id/img_reply"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:contentDescription="@string/content_desc"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.transmedika.transmedikakitui.widget.NetkromTextView
+                    android:id="@+id/tv_forward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="288dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="15dp"
+                    android:visibility="gone"
+                    android:drawableStart="@drawable/ic_forward_gray"
+                    android:text="@string/teruskan"
+                    android:textStyle="italic"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/btn_ubah_profile">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@string/content_desc"
+                        app:srcCompat="@drawable/ic_file"/>
+                    <com.transmedika.transmedikakitui.widget.NetkromTextView
+                        android:id="@+id/tv_file"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:maxWidth="200dp"
+                        android:layout_marginStart="10dp"
+                        android:paddingTop="2dp"
+                        tools:visibility="gone"
+                        android:textSize="@dimen/x_small_text"
+                        tools:text="Rontgen-Hasil-Operasi-Muka-jadi-ganteng.png"
+                        android:textColor="@color/textDefault" />
+                    <com.transmedika.transmedikakitui.widget.NetkromTextView
+                        android:id="@+id/tv_reupload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:text="@string/upload_ulang"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:drawableStart="@drawable/ic_upload_"
+                        android:textColor="@color/gray"
+                        android:drawablePadding="5dp"
+                        android:background="@drawable/bg_upload_ulang"
+                        android:textSize="16sp" />
+                    <ImageView
+                        android:id="@+id/img_error_info"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:contentDescription="@string/content_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        app:tint="@color/red"
+                        app:srcCompat="@drawable/ic_info"/>
+                </LinearLayout>
+
+                <com.transmedika.transmedikakitui.widget.NetkromTextView
+                    android:id="@+id/tv_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="288dp"
+                    android:paddingStart="12dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="60dp"
+                    android:textSize="@dimen/xx_small_text"
+                    tools:text="Pagi, kira-kira di mana ya saya bisa dapatkan mainan tersebut?" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="2.5dp"
+                android:orientation="horizontal">
+                <com.transmedika.transmedikakitui.widget.NetkromTextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:paddingStart="50dp"
+                    android:paddingEnd="0dp"
+                    android:textColor="#8e8e8e"
+                    android:layout_gravity="center_horizontal"
+                    tools:text="12:00"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+                <ImageView
+                    android:id="@+id/img_status"
+                    android:contentDescription="@string/content_desc"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/received"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

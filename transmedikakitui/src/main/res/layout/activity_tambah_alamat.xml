@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:id="@+id/view_main"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+        <com.transmedika.transmedikakitui.widget.CommonToolbarBack
+            android:id="@+id/toolbar"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:id="@+id/ll_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/ed_normal_search"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:gravity="center"
+                tools:ignore="UselessParent">
+                <fragment
+                    android:id="@+id/autocomplete_fragment"
+                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="FragmentTagUsage" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+        <RelativeLayout
+            android:padding="10dp"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/content_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                app:backgroundTint="@color/white"
+                app:fabSize="mini"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:tint="@color/colorPrimary"
+                app:srcCompat="@drawable/ic_gps" />
+            <LinearLayout
+                android:id="@+id/ll_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:clipToPadding="false"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:background="@drawable/btn_round">
+                <com.transmedika.transmedikakitui.widget.NetkromTextView
+                    android:id="@+id/tv_finding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/finding_location"
+                    android:textSize="@dimen/x_small_text"/>
+                <ProgressBar
+                    android:id="@+id/pg_loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    style="?android:attr/progressBarStyleSmall"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_bottomsheet"
+            android:backgroundTint="#F6F6F6">
+            <com.transmedika.transmedikakitui.widget.NetkromTextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="@string/tambah_alamat"
+                android:textSize="@dimen/x_small_text"
+                android:textColor="@color/textTitle"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginStart="-2.5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <include
+                android:id="@+id/input_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                layout="@layout/item_input_alamat"/>
+
+            <!--            <dokter.keluarga.pasien.widget.NetkromTextView-->
+            <!--                android:id="@+id/tv_alamat"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:paddingTop="10dp"-->
+            <!--                android:paddingBottom="10dp"-->
+            <!--                android:paddingStart="15dp"-->
+            <!--                android:paddingEnd="15dp"-->
+            <!--                tools:text="Jl. Babakan Kuda"-->
+            <!--                android:text="@string/stip"-->
+            <!--                style="@style/XSmallRobotoRegular"-->
+            <!--                android:textColor="@color/textDefault"/>-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="35dp"-->
+            <!--                android:layout_marginStart="15dp"-->
+            <!--                android:layout_marginEnd="15dp"-->
+            <!--                android:orientation="horizontal">-->
+            <!--                <dokter.keluarga.pasien.widget.NetkromTextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    style="@style/XXSmallRobotoRegular"-->
+            <!--                    android:textColor="@color/textDefault"-->
+            <!--                    android:gravity="center_vertical"-->
+            <!--                    android:paddingStart="5dp"-->
+            <!--                    android:paddingEnd="5dp"-->
+            <!--                    android:background="@drawable/bg_catatan"-->
+            <!--                    android:text="@string/catatan"/>-->
+            <!--                <dokter.keluarga.pasien.widget.NetkromEditText-->
+            <!--                    android:id="@+id/ed_note"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:paddingStart="5dp"-->
+            <!--                    android:paddingEnd="5dp"-->
+            <!--                    android:focusable="false"-->
+            <!--                    android:background="@drawable/bg_catatan_right"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    style="@style/SmallRobotoRegular"/>-->
+            <!--            </LinearLayout>-->
+            <com.transmedika.transmedikakitui.widget.NetkromButton
+                android:id="@+id/btn_terapkan"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/btn_round"
+                android:text="@string/terapkan"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_gravity="end"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F6F6F6"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.transmedika.transmedikakitui.widget.CommonToolbarBack
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            app:layout_collapseMode="pin"
+            app:withMenu="false"
+            app:title="Klinik Form"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_temp_available"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:padding="8dp">
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="2dp"
+                android:contentDescription="@string/content_desc"
+                android:src="@drawable/ic_close_2"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_header"
+                app:tint="@color/red" />
+
+            <ImageView
+                android:id="@+id/iv_info"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="2dp"
+                android:contentDescription="@string/content_desc"
+                android:src="@drawable/ic_info"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromTextView
+                android:id="@+id/tv_header"
+                android:textSize="@dimen/x_small_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/history_form_jawaban_desc"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_info"
+                app:layout_constraintEnd_toStartOf="@+id/iv_close"
+                app:layout_constraintStart_toEndOf="@+id/iv_info"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromTextView
+                android:id="@+id/tv_ket"
+                android:textSize="@dimen/xx_small_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/history_form_jawaban_ket"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/tv_header"
+                app:layout_constraintTop_toBottomOf="@+id/iv_info"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromButton
+                android:id="@+id/btn_jawaban_baru"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:backgroundTint="@color/white"
+                android:text="@string/jawaban_baru"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_ket" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ScrollView
+            android:id="@+id/view_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/parent_view"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:orientation="vertical">
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+
+

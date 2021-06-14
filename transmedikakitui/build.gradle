@@ -1,0 +1,169 @@
+plugins {
+    id 'com.android.library'
+    id 'realm-android'
+    id 'maven-publish'
+}
+
+ext {
+    defaultCompileSdkVersion        = 29
+    defaultTargetSdkVersion         = 29
+
+    defaultLeakcanaryVersion        = '1.5.4'
+    defaultBlockcanaryVersion       = '1.2.1'
+    defaultRxjavaVersion            = '3.0.0'
+    defaultLottieVersion            = '3.5.0'
+
+    /* google */
+    defaultSupportVersion           = '1.2.0'
+    defaultMaterialVersion          = '1.3.0'
+    defaultLocationVersion          = '17.0.0'
+    defaultFirebaseMessagingVersion = '20.2.4'
+    defaultFirebaseCoreVersion      = '17.0.0'
+    defaultPlayServiceAuthVersion   = '18.1.0'
+    defaultMapUtislVersion          = '0.5+'
+    defaultPlaceVersion             = '2.4.0'
+    defaultWorkmanagerVersion       = '2.4.0'
+    defaultFirebaseAnalyticsVersion = '18.0.2'
+    defaultCrashlyticsVersion       = '17.4.0'
+
+    defaultGlideVersion             = '4.7.1'
+    defaultGsonVersion              = '2.8.6'
+    defaultRetrofitVersion          = '2.9.0'
+    defaultOkhttpVersion            = '3.6.0'
+    defaultChuckVersion             = '1.1.0'
+    defaultParseVersion             = '1.25.0'
+    defaultParseLiveQueryVersion    = '1.2.2'
+
+    defaultJodaTimeVersion          = '2.10.6'
+}
+
+android {
+    compileSdkVersion rootProject.hasProperty("compileSdkVersion") ? rootProject.compileSdkVersion : defaultCompileSdkVersion
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion rootProject.hasProperty("targetSdkVersion") ? rootProject.targetSdkVersion : defaultTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    //api project(':transmedikakit')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':peer')
+    implementation project(':opencamerasrc')
+
+    //google
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation "androidx.appcompat:appcompat:${rootProject.hasProperty("supportVersion") ? rootProject.supportVersion : defaultSupportVersion}"
+    implementation "com.google.android.material:material:${rootProject.hasProperty("materialVersion") ? rootProject.materialVersion : defaultMaterialVersion}"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    api "com.google.firebase:firebase-messaging:${rootProject.hasProperty("firebaseMessagingVersion") ? rootProject.firebaseMessagingVersion : defaultFirebaseMessagingVersion}"
+    api "com.google.firebase:firebase-analytics:${rootProject.hasProperty("firebaseAnalyticsVersion") ? rootProject.firebaseAnalyticsVersion : defaultFirebaseAnalyticsVersion}"
+    api "com.google.firebase:firebase-crashlytics:${rootProject.hasProperty("crashlyticsVersion") ? rootProject.crashlyticsVersion : defaultCrashlyticsVersion}"
+    implementation "com.google.firebase:firebase-core:${rootProject.hasProperty("firebaseCoreVersion") ? rootProject.firebaseCoreVersion : defaultFirebaseCoreVersion}"
+    implementation "com.google.android.libraries.places:places:${rootProject.hasProperty("placeVersion") ? rootProject.placeVersion : defaultPlaceVersion}"
+    implementation "com.google.android.gms:play-services-auth:${rootProject.hasProperty("playServiceAuthVersion") ? rootProject.playServiceAuthVersion : defaultPlayServiceAuthVersion}"
+    implementation "com.google.maps.android:android-maps-utils:${rootProject.hasProperty("mapUtislVersion") ? rootProject.mapUtislVersion : defaultMapUtislVersion}"
+    implementation "com.google.android.gms:play-services-maps:${rootProject.hasProperty("locationVersion") ? rootProject.locationVersion : defaultLocationVersion}"
+    implementation "com.google.android.gms:play-services-location:${rootProject.hasProperty("locationVersion") ? rootProject.locationVersion : defaultLocationVersion}"
+    implementation "com.google.android.gms:play-services-places:${rootProject.hasProperty("locationVersion") ? rootProject.locationVersion : defaultLocationVersion}"
+    api "androidx.work:work-rxjava3:${rootProject.hasProperty("workmanagerVersion") ? rootProject.workmanagerVersion : defaultWorkmanagerVersion}"
+
+
+    //dex
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //parse
+    api "com.github.parse-community.Parse-SDK-Android:rxjava:${defaultParseVersion}"
+    api "com.github.parse-community:ParseLiveQuery-Android:${defaultParseLiveQueryVersion}"
+
+    //chuck
+    debugImplementation "com.readystatesoftware.chuck:library:${defaultChuckVersion}"
+    releaseImplementation "com.readystatesoftware.chuck:library-no-op:${defaultChuckVersion}"
+
+    //time
+    api "joda-time:joda-time:${defaultJodaTimeVersion}"
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //rx
+    implementation "io.reactivex.rxjava3:rxjava:${rootProject.hasProperty("rxJavaVersion") ? rootProject.rxJavaVersion : defaultRxjavaVersion}"
+    implementation "io.reactivex.rxjava3:rxandroid:${rootProject.hasProperty("rxJavaVersion") ? rootProject.rxJavaVersion : defaultRxjavaVersion}"
+    implementation "com.github.tbruyelle:rxpermissions:0.12"
+
+    //network
+    implementation "com.google.code.gson:gson:${rootProject.hasProperty("gsonVersion") ? rootProject.gsonVersion : defaultGsonVersion}"
+    api "com.squareup.retrofit2:retrofit:${rootProject.hasProperty("retrofitVersion") ? rootProject.retrofitVersion : defaultRetrofitVersion}"
+    api "com.squareup.retrofit2:converter-scalars:${rootProject.hasProperty("retrofitVersion") ? rootProject.retrofitVersion : defaultRetrofitVersion}"
+    api "com.squareup.retrofit2:converter-gson:${rootProject.hasProperty("retrofitVersion") ? rootProject.retrofitVersion : defaultRetrofitVersion}"
+    api "com.squareup.retrofit2:adapter-rxjava3:${rootProject.hasProperty("retrofitVersion") ? rootProject.retrofitVersion : defaultRetrofitVersion}"
+    api "com.squareup.okhttp3:okhttp:${rootProject.hasProperty("okhttpVersion") ? rootProject.okhttpVersion : defaultOkhttpVersion}"
+    api "com.squareup.okhttp3:logging-interceptor:${rootProject.hasProperty("okhttpVersion") ? rootProject.okhttpVersion : defaultOkhttpVersion}"
+    implementation "org.jsoup:jsoup:1.11.3"
+
+    //image loader
+    api "com.github.bumptech.glide:glide:${rootProject.hasProperty("glideVersion") ? rootProject.glideVersion : defaultGlideVersion}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${rootProject.hasProperty("glideVersion") ? rootProject.glideVersion : defaultGlideVersion}"
+
+    //ui
+    api "me.yokeyword:fragmentationx:1.0.2"
+    api "com.google.android:flexbox:0.2.6"
+
+    //canary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:${defaultLeakcanaryVersion}"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${defaultLeakcanaryVersion}"
+    debugImplementation "com.github.moduth:blockcanary-android:${defaultBlockcanaryVersion}"
+    releaseImplementation "com.github.moduth:blockcanary-no-op:${defaultBlockcanaryVersion}"
+
+    //compression
+    implementation 'id.zelory:compressor:2.0.0'
+
+    //animation
+    implementation "com.airbnb.android:lottie:${defaultLottieVersion}"
+
+    //java websocket
+    implementation 'org.java-websocket:Java-WebSocket:1.5.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.transmedikakitui'
+                artifactId = 'transmedikakitui'
+                version = '1.0.0'
+            }
+        }
+    }
+}

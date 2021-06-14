@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true">
+
+    <com.transmedika.transmedikakitui.widget.NetkromTextView
+        android:id="@+id/tv_title"
+        android:textSize="@dimen/small_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/feedback_konsultasi"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.transmedika.transmedikakitui.widget.NetkromTextView
+                android:id="@+id/tv_sub_title"
+                android:textSize="@dimen/xx_small_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="12dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@string/feedback_desc"
+                android:textColor="@color/gray3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromCheckBox
+                android:id="@+id/star_1"
+                style="@style/StarFeedback"
+                app:layout_constraintEnd_toStartOf="@+id/star_2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sub_title" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromCheckBox
+                android:id="@+id/star_2"
+                style="@style/StarFeedback"
+                app:layout_constraintBottom_toBottomOf="@id/star_1"
+                app:layout_constraintEnd_toStartOf="@+id/star_3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/star_1"
+                app:layout_constraintTop_toTopOf="@id/star_1" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromCheckBox
+                android:id="@+id/star_3"
+                style="@style/StarFeedback"
+                app:layout_constraintBottom_toBottomOf="@id/star_1"
+                app:layout_constraintEnd_toStartOf="@+id/star_4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/star_2"
+                app:layout_constraintTop_toTopOf="@id/star_1" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromCheckBox
+                android:id="@+id/star_4"
+                style="@style/StarFeedback"
+                app:layout_constraintBottom_toBottomOf="@id/star_1"
+                app:layout_constraintEnd_toStartOf="@+id/star_5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/star_3"
+                app:layout_constraintTop_toTopOf="@id/star_1" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromCheckBox
+                android:id="@+id/star_5"
+                style="@style/StarFeedback"
+                app:layout_constraintBottom_toBottomOf="@id/star_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/star_4"
+                app:layout_constraintTop_toTopOf="@id/star_1" />
+
+            <include layout="@layout/common_line_horiz"
+                android:id="@+id/hr_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/star_1"/>
+
+            <com.transmedika.transmedikakitui.widget.NetkromTextView
+                android:id="@+id/tv_label_comment"
+                android:textSize="@dimen/small_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/komentar"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hr_1" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/fl_main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:flexWrap="wrap"
+                app:alignItems="stretch"
+                app:alignContent="stretch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_comment">
+
+                <com.transmedika.transmedikakitui.widget.NetkromTextView
+                    android:id="@+id/tv_mudahcepat"
+                    style="@style/TextViewTagRecommend"
+                    android:textSize="@dimen/x_small_text"
+                    android:text="@string/mudah_cepat"/>
+
+                <com.transmedika.transmedikakitui.widget.NetkromTextView
+                    android:id="@+id/tv_dokter_profesional"
+                    style="@style/TextViewTagRecommend"
+                    android:textSize="@dimen/x_small_text"
+                    android:text="@string/dokter_profesional"/>
+
+                <com.transmedika.transmedikakitui.widget.NetkromTextView
+                    android:id="@+id/tv_biaya_terjangkau"
+                    style="@style/TextViewTagRecommend"
+                    android:textSize="@dimen/x_small_text"
+                    android:text="@string/biaya_terjangkau"/>
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+            <com.transmedika.transmedikakitui.widget.NetkromTextArea
+                android:id="@+id/ed_area"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ed_area"
+                app:textview_size="12sp"
+                app:edittext_size="@dimen/x_small_text"
+                app:text_height="70"
+                app:edittext_hint_text="Tulis komentar anda di sini (Opsional)"
+                app:orientation="vertical"
+                app:max_length="@integer/length100"
+                app:inputType="text|multiline"
+                app:imeOption="action_done"
+                app:gravity="start|top"
+                app:layout_constraintTop_toBottomOf="@id/fl_main"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/textCountSingle"/>
+
+            <include layout="@layout/common_line_horiz"
+                android:id="@+id/hr_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ed_area"/>
+
+            <com.transmedika.transmedikakitui.widget.NetkromTextView
+                android:id="@+id/tv_label_fav"
+                android:textSize="@dimen/x_small_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:visibility="gone"
+                android:text="@string/tambahkan_sebagai_dokter_favorit"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/cb_fav"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hr_2" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromCheckBox
+                android:id="@+id/cb_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="@id/tv_label_fav"
+                app:layout_constraintBottom_toBottomOf="@id/tv_label_fav"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.transmedika.transmedikakitui.widget.NetkromButton
+                android:id="@+id/btn_konfirmasi"
+                android:textSize="@dimen/x_small_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/primary_button_enabled"
+                android:text="@string/konfirmasi"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:enabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_fav" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
