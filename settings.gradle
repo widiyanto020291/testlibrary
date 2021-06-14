@@ -1,8 +1,0 @@
-rootProject.name = "Transmedika-Android_SDK"
-include ':app'
-include ':transmedikakitui'
-//include ':transmedikakit'
-//include ':transmedikacommon'
-include ':peer'
-include ':opencamerasrc'
-project(':peer').projectDir = new File(rootDir, 'webrtcpeer/peer/')
